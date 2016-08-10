@@ -68,8 +68,8 @@ def PlotHistogram(X,bins):
 	plt.ylabel('Frequency')
 	plt.show()
 
-#PlotHistogram(x_random,5)
-#PlotHistogram(y_random,5)
+#PlotHistogram(x_random,20)
+#PlotHistogram(y_random,20)
 
 area = 0
 running_area = []
