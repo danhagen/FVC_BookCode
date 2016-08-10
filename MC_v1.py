@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import itertools
 from scipy.spatial import ConvexHull
 from mpl_toolkits.mplot3d import Axes3D
-def quick_2D_plot_tool(xlabel,ylabel,title,axes_position):
+def quick_2D_plot_tool(xlabel,ylabel,title):
 	"""
 	This will take in the x and y labels as well as a figure title and
 	format an already established figure to remove the box, place the
