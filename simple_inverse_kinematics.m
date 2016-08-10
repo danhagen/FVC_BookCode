@@ -73,7 +73,7 @@ q = q_0; % start creating the array of joint angles
 % ******************* USER ENTERED last_point ********
 % ****************************************************
 fprintf('Index of last point along the trajectory, entered by the user\nbetween 102 and 1001 \n')
-last_point = 300 %any value from 102 to 1001
+last_point = 150 %any value from 102 to 1001
 
 for i = 102:last_point % do the inverse kinematics for this subset of the circle
     q1 = q_last(1); %this is q_(i-1)
