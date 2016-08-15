@@ -187,7 +187,7 @@ for i = 1:value(1)
     delta_l_percent_change(i,:) = (delta_l(i,:)/lo_cm(i))*100;
     l_raw(i,:) = (delta_l(i,:) + lo_cm(i)); 
     new_l_norm(i,:) = ((delta_l(i,:) + lo_cm(i))/lo_cm(i))-1; 
-    % [[You subtract 1 becaue you are using this to calculate the f-l correction]]
+    % [[You subtract 1 because you are using this to calculate the f-l correction]]
 end
 
 % Figure 3: Normalize by fiber length, percentage change from lo.

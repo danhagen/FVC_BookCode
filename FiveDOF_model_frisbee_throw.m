@@ -58,7 +58,7 @@ plot(q_deg(:,4), 'c')
 plot(q_deg(:,5),'m')
 xlabel('Postures')
 ylabel('Joint angles - Degrees')
-legend('Adduction', 'External Rotation', 'Horizontal Adduction', 'Elbow Flexion', 'Wrist Flexion')
+legend('External Rotation', 'Adduction', 'Horizontal Adduction', 'Elbow Flexion', 'Wrist Flexion')
 title('Joint angles during throw phase')
 
 
@@ -187,7 +187,7 @@ for i = 1:value(1)
     delta_l_percent_change(i,:) = (delta_l(i,:)/lo_cm(i))*100;
     l_raw(i,:) = (delta_l(i,:) + lo_cm(i)); 
     new_l_norm(i,:) = ((delta_l(i,:) + lo_cm(i))/lo_cm(i))-1; 
-    % [[You subtract 1 becaue you are using this to calculate the f-l correction]]
+    % [[You subtract 1 because you are using this to calculate the f-l correction]]
 end
 
 % Figure 3: Normalize by fiber length, percentage change from lo.
