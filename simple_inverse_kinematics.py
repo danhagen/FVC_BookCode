@@ -1,3 +1,11 @@
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#%%%%%%%% NEUROMECHANICS  %%%%%%%%%%%%%
+# (c) Francisco Valero-Cuevas
+# August 2016, version 2.0
+# Filename: simple_inverse_kinematics
+# Example of linearized inverse kinematics
+# for a 2D2DOF_system
+
 import numpy as np 
 import sympy as sp 
 from numpy import pi 
@@ -33,16 +41,15 @@ def InverseJacobianMatrix(Angle1,Angle2,Link1,Link2):
 	J_inv= J**-1
 	J_inv = J_inv.subs([(Theta1,Angle1),(Theta2,Angle2)])
 	return(J_inv)
+def TwoLinkTrajectory(Angle1,Angle2,Link1,Link2):
+	x = Link1*np.cos(Angle1) + Link2*np.cos(Angle1+Angle2)
+	y = Link1*np.sin(Angle1) + Link2*np.sin(Angle1+Angle2)
+	return(x,y)
 
 radius = 5
 X = np.array([[radius*np.cos(theta),radius*np.sin(theta)] for theta in np.linspace(0,np.pi,10)])
 Xi = interp1d(X[:,0],X[:,1], kind = 'cubic')
 Interpolated_X = np.array([np.arange(-5,5,0.01), Xi(np.arange(-5,5,0.01))])
-
-def TwoLinkTrajectory(Angle1,Angle2,Link1,Link2):
-	x = Link1*np.cos(Angle1) + Link2*np.cos(Angle1+Angle2)
-	y = Link1*np.sin(Angle1) + Link2*np.sin(Angle1+Angle2)
-	return(x,y)
 
 # Plot interpolated trajectory
 def PlotInterpolatedData(X,Interpolated_X):
