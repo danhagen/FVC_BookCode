@@ -35,6 +35,10 @@ disp(['x = ' char(G(1))]);
 disp(['y = ' char(G(2))]);
 disp(['alpha = ' char(G(3))]);
 
+% Create Jacobian Matrix
+disp('Jacobian Matrix:');
+J = jacobian(G,[Angle1,Angle2])
+
 % Numerical Example and plot for Angle 1 = 135 deg, Angle 2 = -120 deg
 Angle1 = 135*pi/180;
 Angle2 = -120*pi/180;
@@ -62,12 +66,52 @@ hold on;
 xlimits = get(gca,'xlim');
 ylimits = get(gca,'ylim');
 set(gca,'xlim',[xlimits(1)-5, xlimits(2)+5]);
-set(gca,'ylim',[ylimits(1)-5, ylimits(2)])
-plot([xlimits(1)-5, xlimits(2)+5],[0, 0],'color',[0.75, 0.75, 0.75], 'LineWidth', 2);
-plot([0, 0],[ylimits(1)-5, ylimits(2)],'color',[0.75, 0.75, 0.75], 'LineWidth', 2);
+set(gca,'ylim',[ylimits(1)-5, ylimits(2)]);
+xlimits = get(gca,'xlim');
+ylimits = get(gca,'ylim');
+plot([xlimits(1), xlimits(2)],[0, 0],'color',[0.75, 0.75, 0.75], 'LineWidth', 2);
+plot([0, 0],[ylimits(1), ylimits(2)],'color',[0.75, 0.75, 0.75], 'LineWidth', 2);
 plot(x,y,'ko-','LineWidth',4,'MarkerSize',16,'MarkerFaceColor','k');
 xlabel('x');
 ylabel('y');
 title(['Simple Forward Kinematics for Fig 2.1 (Angle 1 = ' num2str(Angle1*180/pi) ...
+						', Angle 2 = ' num2str(Angle2*180/pi) ')']);
+axis equal;
+
+% Numerical examples and plot for same configuration but with unit angular
+% velocities for each joint.
+
+J = eval(subs(J));
+EndpointVelocity1 = J*[1;0];
+EndpointVelocity2 = J*[0;1];
+
+disp('Velocity for rotation about joint 1:');
+disp(EndpointVelocity1);
+disp('Velocity for rotation about joint 2:');
+disp(EndpointVelocity2);
+
+figure;
+x = [ 	0; ...
+		Link1*cos(Angle1); ...
+		Link1*cos(Angle1) + Link2*cos(Angle1+Angle2) ];
+y = [ 	0; ...
+		Link1*sin(Angle1); ...
+		Link1*sin(Angle1) + Link2*sin(Angle1+Angle2) ];
+hold on;
+quiver(x(3),y(3),EndpointVelocity1(1),EndpointVelocity1(2),'r','LineWidth',2);
+quiver(x(3),y(3),EndpointVelocity2(1),EndpointVelocity2(2),'g','LineWidth',2);
+ylim([-5,55]);
+axis equal;
+xlimits = get(gca,'xlim');
+plot([xlimits(1), xlimits(2)],[0, 0],'color',[0.75, 0.75, 0.75], 'LineWidth', 2);
+plot([0, 0],[-5, 55],'color',[0.75, 0.75, 0.75], 'LineWidth', 2);
+plot(x,y,'ko-','LineWidth',4,'MarkerSize',16,'MarkerFaceColor','k');
+plot(x(1),y(1),'ro','MarkerSize',16,'MarkerFaceColor','r');
+plot(x(2),y(2),'go','MarkerSize',16,'MarkerFaceColor','g');
+quiver(x(3),y(3),EndpointVelocity1(1),EndpointVelocity1(2),'r','LineWidth',2);
+quiver(x(3),y(3),EndpointVelocity2(1),EndpointVelocity2(2),'g','LineWidth',2);
+xlabel('x');
+ylabel('y');
+title(['Simple Forward Kinematics with Velocities for Fig 2.1 (Angle 1 = ' num2str(Angle1*180/pi) ...
 						', Angle 2 = ' num2str(Angle2*180/pi) ')']);
 axis equal;
