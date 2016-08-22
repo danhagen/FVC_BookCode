@@ -1,6 +1,6 @@
-# (c) Francisco Valero-Cuevas & Emily Lawrence
-# June 2014, version 1.0
-# Filename: FiveDOF_ArmModel_Neuromechanics_V5.m
+# (c) Daniel A Hagen
+# August 2016, version 1.0
+# Filename: FiveDOF_ArmModel_Neuromechanics_V5.py
 # Example of fiber length changes and fiber velocities
 # for a frisbee throw motion with a 5-DOF, 17-muscle arm model
 
@@ -13,6 +13,7 @@ from mpl_toolkits.mplot3d import Axes3D
 # Conversion from dict to variables is done for easier reading.
 # MUST MAKE SURE THAT FiveDOF_Model.mat IS DOWNLOADED TO THE 
 # SAME FOLDER AS FiveDOF_model_frisbee_throw.py
+# Special thanks to Emily Lawrence for the MATLAB code and sample data.
 output = loadmat('FiveDOF_Model.mat')
 UpperArm, LowerArm, Hand = float(output['L1']),float(output['L2']),float(output['L3'])
 ExtRotation, Adduction = output['angle_ext_rot_ds_rad'].T[0], output['angle_add_ds_rad'].T[0]

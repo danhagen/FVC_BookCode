@@ -1,6 +1,6 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #%%%%%%%% NEUROMECHANICS  %%%%%%%%%%%%%
-# (c) Francisco Valero-Cuevas
+# (c) Daniel A Hagen
 # August 2016, version 2.0
 # Filename: simple_inverse_kinematics
 # Example of linearized inverse kinematics

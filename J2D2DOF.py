@@ -1,6 +1,6 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #%%%%%%%% NEUROMECHANICS  %%%%%%%%%%%%%
-# (c) Francisco Valero-Cuevas
+# (c) Daniel A Hagen
 # August 2016, version 1.0
 # Filename: J2D2DOF.py
 # Jacobian of 2D, 2DOF linkage system
@@ -17,7 +17,7 @@ link1, link2 = sp.symbols('link1 link2', real = True) # System Parameters
 # Create Matrix for Geometric Model
 x = link1*sp.cos(angle1) + link2*sp.cos(angle1+angle2)
 y = link1*sp.sin(angle1) + link2*sp.sin(angle1+angle2)
-G =sp.Matrix([x,y])
+G = sp.Matrix([x,y])
 
 #Create Jacobian and its permutations
 J = G.jacobian([angle1,angle2])
