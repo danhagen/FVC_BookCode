@@ -4,6 +4,19 @@
 # August 2016
 # University of Southern California
 
+# This code can be used in many ways (to find muscle length
+# or even muscle velocity). Similar code was utilized to create 
+# the results found in:
+
+# "Exploring the high-dimensional structure of muscle redundancy 
+# via subject-specific and generic musculoskeletal models"
+# Valero-Cuevas FJ, Cohn BA, Yngvason HF, Lawrence EL. 
+# (Journal of Biomechanics, ASB Special Issue, 48(11): p. 2887-96, 2015)
+
+# "Slow Movements of Bio-inspired Limbs." 
+# Babikian S, Valero-Cuevas FJ, and Kanso E. 
+# Journal of Nonlinear Science, Accepted 2016.
+
 import numpy as np 
 import matplotlib.pyplot as plt 
 

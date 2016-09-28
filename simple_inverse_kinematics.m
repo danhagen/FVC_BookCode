@@ -22,7 +22,11 @@ syms r t_x t_y      % trajectory components
 x1 = l1.*cos(q1) + l2.*cos(q1+q2);
 x2 = l1.*sin(q1) + l2.*sin(q1+q2);
 G = [x1;x2];
-%Create Jacobian and its permutations
+% Create Jacobian and its permutations
+% This is based on the classical representation of the Manipulator Jacobian
+% for 2 dof's utilizing only the cartesian coordinates for the Geometric
+% model. This results in a full rank, invertible 2x2 Jacobian that we see 
+% in equation 3.14 of Fundamentals of Neuromechanics (F.J. Valero-Cuevas 2015). 
 J = jacobian(G,[q1,q2]);
 J_inv = inv(J);
 J_trans = J';

@@ -1,6 +1,7 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #%%%%%%%% NEUROMECHANICS  %%%%%%%%%%%%%
-# (c) Daniel A Hagen
+# (c) Daniel A Hagen 
+# based on MATLAB code by Francisco Valero-Cuevas
 # August 2016, version 1.0
 # Filename: J2D2DOF.py
 # Jacobian of 2D, 2DOF linkage system

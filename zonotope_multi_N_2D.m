@@ -3,6 +3,9 @@
 % (c) Francisco Valero-Cuevas
 % October 2013, version 1.0
 % Filename: zonotope_muti_N.m
+% Can be used to recreate zonotope figures like the Figure 7.9 
+% in Fundamentals of Neuromechanics (F.J. Valero-Cuevas 2015)
+
 clear all
 close all
 clc

@@ -1,8 +1,18 @@
 # (c) Daniel A Hagen
+# based on MATLAB code by  
+# Francisco Valero-Cuevas and Emily Lawrence (2014)
 # August 2016, version 1.0
-# Filename: FiveDOF_ArmModel_Neuromechanics_V5.py
+# Filename: FiveDOF_model_frisbee_throw.py
 # Example of fiber length changes and fiber velocities
 # for a frisbee throw motion with a 5-DOF, 17-muscle arm model
+# This can be used to recreate images similar to Fig. 6.3 
+# from Fundamentals of Neuromechanics (F.J. Valero-Cuevase 2015).
+
+# Similar code was utilized to create the results found in
+# "Exploring the high-dimensional structure of muscle redundancy 
+# via subject-specific and generic musculoskeletal models" by
+# Valero-Cuevas FJ, Cohn BA, Yngvason HF, Lawrence EL. 
+# (Journal of Biomechanics, ASB Special Issue, 48(11): p. 2887-96, 2015)
 
 import numpy as np 
 from scipy.io import loadmat
@@ -298,23 +308,4 @@ def plot_muscle_lengths(MuscleLength):
 #plot_muscle_lengths(MuscleLength)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-w = 0.5
 

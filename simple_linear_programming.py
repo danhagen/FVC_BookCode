@@ -1,9 +1,10 @@
-# Simple Linear Programming Example
-# using the Diet Problem from Ch 5.2.2 
-# of Fundamentals of Neuromechanics
 # (c) Daniel A Hagen
 # August 2016
 # University of Southern California
+# Simple Linear Programming Example
+# using the Diet Problem from Ch 5.2.2 
+# of Fundamentals of Neuromechanics
+# (F.J. Valero-Cuevas, 2016)
 
 import numpy as np 
 from scipy.optimize import linprog

@@ -1,8 +1,11 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #%%%%%%%% NEUROMECHANICS %%%%%%%%%%%%%
-# (c) Francisco Valero-Cuevas
+# (c) Daniel A. Hagen
+# based on the MATLAB code by Francisco Valero-Cuevas (2013)
 # August 2016, version 2.0
 # Filename: zonotope_muti_N.py
+# Can be used to recreate zonotope figures like the Figure 7.9 
+# in Fundamentals of Neuromechanics (F.J. Valero-Cuevas 2015)
 
 # This script shows how to map N-dimensional N-cubes into 2D and 3D via a
 # random H matrix of dimensions 2 x N and 3 x N, respectively.

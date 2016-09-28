@@ -2,9 +2,17 @@
 %%%%%%%%% NEUROMECHANICS  %%%%%%%%%%%%%
 % (c) Francisco Valero-Cuevas & Emily Lawrence
 % June 2014, version 1.0
-% Filename: FiveDOF_ArmModel_Neuromechanics_V5.m
+% Filename: FiveDOF_model_frisbee_throw.m
 % Example of fiber length changes and fiber velocities
 % for a frisbee throw motion with a 5-DOF, 17-muscle arm model
+% This can be used to recreate images similar to Fig. 6.3 
+% from Fundamentals of Neuromechanics (F.J. Valero-Cuevase 2015)
+
+% Similar code was utilized to create the results found in
+% "Exploring the high-dimensional structure of muscle redundancy 
+% via subject-specific and generic musculoskeletal models" by
+% Valero-Cuevas FJ, Cohn BA, Yngvason HF, Lawrence EL. 
+% (Journal of Biomechanics, ASB Special Issue, 48(11): p. 2887-96, 2015)
 
 %%%%%% Requires file %%%%%%
 %     FiveDOF_Model.m

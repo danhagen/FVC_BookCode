@@ -1,8 +1,9 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #%%%%%%%% NEUROMECHANICS  %%%%%%%%%%%%%
 # (c) Daniel A Hagen
+# based on MATLAB code by Francisco Valero-Cuevas
 # August 2016, version 2.0
-# Filename: simple_inverse_kinematics
+# Filename: simple_inverse_kinematics.py
 # Example of linearized inverse kinematics
 # for a 2D2DOF_system
 
@@ -34,6 +35,11 @@ def InverseJacobianMatrix(Theta1,Theta2,Link1,Link2):
 	Utilizes symbolics to create a Jacobian matrix and its inverse
 	transpose. Only appropriate for a 2 link planar model. Theta1 and
 	Theta2 must be symbolics. Link lengths must be scalar.
+
+	This is based on the classical representation of the Manipulator Jacobian
+	for 2 dof's utilizing only the cartesian coordinates for the Geometric
+	model. This results in a full rank, invertible 2x2 Jacobian that we see 
+	in equation 3.14 of Fundamentals of Neuromechanics (F.J. Valero-Cuevas 2015). 
 	"""
 	G = sp.Matrix([	Link1*sp.cos(Theta1)+Link2*sp.cos(Theta1+Theta2),\
 					Link1*sp.sin(Theta1)+Link2*sp.sin(Theta1+Theta2)	])
